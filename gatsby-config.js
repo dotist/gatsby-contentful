@@ -5,6 +5,14 @@ module.exports = {
     keywords: 'Dancemusic, Underground radio, House, Berlin Community Radio',
   },
   plugins: [
+    {
+      resolve: 'gatsby-source-contentful',
+      options: {
+        spaceId: '6s41busehey4',
+        accessToken:
+          '65a1f07b332363ea024d6555888e94e92381ed2c40e4414ae4b11ba56b23930a',
+      },
+    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
     {
@@ -28,15 +36,9 @@ module.exports = {
         path: `${__dirname}/static/assets`,
       },
     },
-    {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        excerpt_separator: `<!-- end -->`,
-      },
-    },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
-    'gatsby-plugin-netlify-cms',
+    'gatsby-transformer-remark',
   ],
 }
 

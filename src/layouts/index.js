@@ -8,14 +8,14 @@ import './index.css'
 const Layout = ({ children, data, location }) => (
   <div>
     <Helmet
-      title={data.site.siteMetadata.title}
-      meta={[
-        { name: 'description', content: data.site.siteMetadata.desc },
-        { name: 'keywords', content: data.site.siteMetadata.keywords },
-      ]}
+    // title={data.site.siteMetadata.title}
+    // meta={[
+    //   { name: 'description', content: data.site.siteMetadata.desc },
+    //   { name: 'keywords', content: data.site.siteMetadata.keywords },
+    // ]}
     />
     <Header
-      location = { location }
+      location={location}
       siteTitle={data.site.siteMetadata.title}
       siteMeta={data.site.siteMetadata.desc}
       siteImageSizes={data.background.sizes}
@@ -49,7 +49,7 @@ export const query = graphql`
         keywords
       }
     }
-    background: imageSharp(id: {regex:"/bg.jpg/"}) {
+    background: imageSharp(id: { regex: "/bg.jpg/" }) {
       sizes(maxWidth: 1240) {
         ...GatsbyImageSharpSizes
       }

@@ -1,15 +1,15 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import PostListing from '../components/postListing.js';
+import PostListing from '../components/PostListing.js'
 
-const IndexPage = ({data}) => (
+const IndexPage = ({ data }) => (
   <div>
     <h2>Posts</h2>
-    {data.allMarkdownRemark.edges.map(({node}) => (
+    {data.allContentfulBlogPost.edges.map(({ node }) => (
       <PostListing key={node.id} post={node} />
     ))}
   </div>
-);
+)
 
 export const query = graphql`
   query SiteMeta {
@@ -19,26 +19,22 @@ export const query = graphql`
         desc
       }
     }
-    allMarkdownRemark(sort: {
-      fields: [frontmatter___date],
-      order: DESC
-    }) {
+    allContentfulBlogPost {
       edges {
         node {
+          title
+          body {
+            childMarkdownRemark {
+              excerpt
+            }
+          }
+          createdAt(formatString: "DD. MMMM YYYY")
+          slug
           id
-          frontmatter {
-            title
-            date(formatString: "DD. MMMM YY")
-          }
-          html
-          excerpt
-          fields {
-           slug
-          }
         }
       }
     }
-}
-`;
+  }
+`
 
 export default IndexPage
