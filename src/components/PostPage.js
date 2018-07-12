@@ -1,19 +1,20 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 export default class PostPage extends Component {
-  render () {
-    const { data } = this.props;
+  render() {
+    const { data } = this.props
+    if (!data) return null
     return (
       <div>
         <span>{data.markdownRemark.frontmatter.date}</span>
         <h1>{data.markdownRemark.frontmatter.title}</h1>
         <div
           dangerouslySetInnerHTML={{
-            __html: data.markdownRemark.html
+            __html: data.markdownRemark.html,
           }}
         />
       </div>
-    );
+    )
   }
 }
 
@@ -27,4 +28,4 @@ export const query = graphql`
       }
     }
   }
-`;
+`
