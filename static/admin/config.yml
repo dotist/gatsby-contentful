@@ -1,5 +1,6 @@
 backend:
-  name: test-repo
+  name: github
+  repo: dotist/dyssembler-gatsby
 
 media_folder: static/assets
 
