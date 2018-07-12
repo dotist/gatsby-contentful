@@ -1,34 +1,36 @@
 module.exports = {
   siteMetadata: {
-    title: 'Isaac Bigsby Trogdon',
-    desc:  'Based in Berlin DE - IBT works in web-development. Building platforms over years in media design, digital strategies.',
-    keywords: 'drupal, web-development, Isaac Bigsby Trogdon'
+    title: 'Dyssembler',
+    desc: 'DYSS.NET',
+    keywords: 'Dancemusic, Underground radio, House, Berlin Community Radio',
   },
-  pathPrefix: "/ibt-gatsby",
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "src",
+        name: 'src',
         path: `${__dirname}/src`,
-      }
+      },
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "img",
+        name: 'img',
         path: `${__dirname}/src/images`,
-      }
+      },
     },
     {
-      resolve: "gatsby-transformer-remark",
+      resolve: 'gatsby-transformer-remark',
       options: {
-        excerpt_separator: `<!-- end -->`
-      }
+        excerpt_separator: `<!-- end -->`,
+      },
     },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    'gatsby-plugin-netlify-cms',
   ],
 }
+
+// pathPrefix: "/ibt-gatsby",
