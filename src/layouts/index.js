@@ -8,11 +8,11 @@ import './index.css'
 const Layout = ({ children, data, location }) => (
   <div>
     <Helmet
-    // title={data.site.siteMetadata.title}
-    // meta={[
-    //   { name: 'description', content: data.site.siteMetadata.desc },
-    //   { name: 'keywords', content: data.site.siteMetadata.keywords },
-    // ]}
+      title={data.site.siteMetadata.title}
+      meta={[
+        { name: 'description', content: data.site.siteMetadata.desc },
+        { name: 'keywords', content: data.site.siteMetadata.keywords },
+      ]}
     />
     <Header
       location={location}
@@ -49,7 +49,7 @@ export const query = graphql`
         keywords
       }
     }
-    background: imageSharp(id: { regex: "/bg.jpg/" }) {
+    background: imageSharp(id: { regex: "/header-bg.jpg/" }) {
       sizes(maxWidth: 1240) {
         ...GatsbyImageSharpSizes
       }
