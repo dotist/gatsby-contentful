@@ -11,6 +11,7 @@ export default class PostPage extends Component {
         <div
           dangerouslySetInnerHTML={{
             __html: data.contentfulBlogPost.body.childMarkdownRemark.html,
+            // __html: data.contentfulBlogPost.body.body,
           }}
         />
       </div>
@@ -23,6 +24,7 @@ export const query = graphql`
     contentfulBlogPost(slug: { eq: $slug }) {
       title
       body {
+        body
         childMarkdownRemark {
           html
         }
