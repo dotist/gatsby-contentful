@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'Dyssembler',
-    desc: 'DYSS.NET',
-    keywords: 'Dancemusic, Underground radio, House, Berlin Community Radio',
+    title: 'Basic Blog',
+    desc: 'Contentful CMS rendered with GatsbyJS',
+    keywords: 'web, development',
   },
   plugins: [
     {
@@ -41,5 +41,3 @@ module.exports = {
     'gatsby-transformer-remark',
   ],
 }
-
-// pathPrefix: "/ibt-gatsby",
